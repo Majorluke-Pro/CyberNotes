@@ -1,0 +1,22 @@
+1. namp <IP Address> -sS
+#### TCP SYN port scan
+
+2. nmap <IP Address> -sT 
+#### TCP connect port scan
+
+3. nmap <IP Address> -sA 
+#### TCP ACK port scan
+
+4. nmap <IP Address> -sU 
+#### UDP port scan
+
+5. nmap <IP Address> -Sf 
+#### TCP FIN scan
+
+6. nmap -SX <IP Address>
+#### XMAS scan 
+
+7. nmap -Sp <IP Address>
+#### Ping Scan
+
+8. 

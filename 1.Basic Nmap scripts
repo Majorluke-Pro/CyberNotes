@@ -1,0 +1,43 @@
+## Nmap list scan against IP Addresses
+
+nmap -sL <IP Address> 
+
+Example ouptut: 
+
+    felix> nmap -sL 6.209.24.0/24 6.207.0.0/22
+
+Starting Nmap ( https://nmap.org )
+Nmap scan report for 6.209.24.0
+Nmap scan report for fw.corp.avataronline.com (6.209.24.1)
+Nmap scan report for dev2.corp.avataronline.com (6.209.24.2)
+Nmap scan report for 6.209.24.3
+Nmap scan report for 6.209.24.4
+...
+Nmap scan report for dhcp-21.corp.avataronline.com (6.209.24.21)
+Nmap scan report for dhcp-22.corp.avataronline.com (6.209.24.22)
+Nmap scan report for dhcp-23.corp.avataronline.com (6.209.24.23)
+...
+Nmap scan report for 6.207.0.0
+Nmap scan report for gw.avataronline.com (6.207.0.1)
+Nmap scan report for ns1.avataronline.com (6.207.0.2)
+Nmap scan report for ns2.avataronline.com (6.207.0.3)
+Nmap scan report for ftp.avataronline.com (6.207.0.4)
+Nmap scan report for 6.207.0.5
+Nmap scan report for 6.207.0.6
+Nmap scan report for www.avataronline.com (6.207.0.7)
+Nmap scan report for 6.207.0.8
+...
+Nmap scan report for cluster-c120.avataronline.com (6.207.2.120)
+Nmap scan report for cluster-c121.avataronline.com (6.207.2.121)
+Nmap scan report for cluster-c122.avataronline.com (6.207.2.122)
+...
+Nmap scan report for 6.207.3.255
+Nmap done: 1280 IP addresses (0 hosts up) scanned in 331.49 seconds
+felix>
+
+
+The next command is not stealthy at all, but it does not matter, 
+We are rather interested in the operating fingerpring which we can see with the next command: 
+
+    nmap -sS -p- -PE -PP -PS80,443 -PA3389 -PU40125 -A -T4 -oA avatartcpscan-%D 6.209.24.0/24 6.207.0.0/22
+

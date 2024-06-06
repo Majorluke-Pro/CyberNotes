@@ -16,7 +16,14 @@
 6. nmap -SX <IP Address>
 #### XMAS scan 
 
-7. nmap -Sp <IP Address>
+7. nmap -sP <IP Address>
 #### Ping Scan
 
-8. 
+8. nmap -Su <IP Address>
+#### UDP Scan 
+
+9. nmap -Sa <IP Address>
+#### TCP ACK scan
+
+10. nmap -Sl <IP Address>
+#### list scan
